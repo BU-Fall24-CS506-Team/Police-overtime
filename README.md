@@ -8,8 +8,10 @@ This project aims to analyze the overtime budget and expenditure patterns within
 
 The main objectives of this project are:
 
-- To analyze year-over-year changes in BPD overtime budgets and spending.
-- To compare overtime hours worked versus overtime hours paid and identify any discrepancies.
+- To analyze year-over-year changes in BPD overtime budgets and spending both intra and inter departments.
+- To compare overtime hours worked versus overtime hours paid and identify any discrepancies in its amount and ratio.
+- To identify the amount of injury pay and the percentage of officers taking them.
+- To identify outliers in the distribution of ratios of overtime worked vs. overtime paid.
 - To explore demographic factors (e.g., officer rank, tenure, gender, and race) and their influence on overtime pay discrepancies.
 - To create visualizations that illustrate trends and anomalies in overtime payments.
 
