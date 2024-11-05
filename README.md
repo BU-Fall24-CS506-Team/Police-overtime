@@ -137,7 +137,21 @@ To gain initial insights into the data, we conducted several preliminary visuali
   - `TOTAL_GROSS` is the most significant predictor of overtime pay.
   - `REGULAR` pay and `DETAIL` earnings also contribute meaningfully.
 - **Outlier Detection**: Identified several employees with overtime pay significantly higher than the norm, warranting further investigation.
-
+outlier information:
+|   _id | NAME              | DEPARTMENT_NAME          | TITLE                   |   REGULAR |   RETRO |    OTHER |   OVERTIME |   INJURED |   DETAIL |   QUINN_EDUCATION |   TOTAL_GROSS |   year |   Overtime_ZScore |
+|------:|:------------------|:-------------------------|:------------------------|----------:|--------:|---------:|-----------:|----------:|---------:|------------------:|--------------:|-------:|------------------:|
+|     7 | Demesmin,Stanley  | Boston Police Department | Police Lieutenant (Det) |    142466 |       0 | 15820.5  |     167510 |         0 |    24695 |           28198.5 |        378690 |   2021 |           5.68317 |
+|    10 | Barrett,Thomas E. | Boston Police Department | Police Sergeant (Det)   |    130930 |       0 | 16724    |     166042 |         0 |        0 |           32732.7 |        346429 |   2021 |           5.62543 |
+|     4 | Demesmin,Stanley  | Boston Police Department | Police Lieutenant (Det) |    145775 |       0 | 13932.9  |     196515 |         0 |    11880 |           29155.3 |        397259 |   2022 |           6.82449 |
+|    15 | Barrett,Thomas E. | Boston Police Department | Police Sergeant (Det)   |    130930 |       0 | 16724    |     163495 |         0 |        0 |           32732.7 |        343881 |   2022 |           5.52519 |
+|    32 | Downey,Paul J     | Boston Police Department | Police Sergeant         |    136589 |       0 |  3187.71 |     163269 |         0 |    12402 |               0   |        315448 |   2022 |           5.51633 |
+|     1 | Demesmin,Stanley  | Boston Police Department | Police Lieutenant (Det) |    145775 |       0 |  6053.17 |     221579 |         0 |    23862 |           29155.3 |        426425 |   2023 |           7.81072 |
+|    10 | Barrett,Thomas E. | Boston Police Department | Police Sergeant (Det)   |    130930 |       0 | 19672.8  |     180548 |         0 |        0 |           32732.7 |        363884 |   2023 |           6.19622 |
+|    12 | Brown,Michael A   | Boston Police Department | Police Sergeant (Det)   |    130930 |       0 | 13775.1  |     172605 |         0 |        0 |           32732.7 |        350043 |   2023 |           5.88368 |
+|    17 | Johnson,Rick E    | Boston Police Department | Police Sergeant (Det)   |    127627 |       0 | 19246.7  |     163204 |         0 |        0 |           31906.9 |        341985 |   2023 |           5.51377 |
+|    40 | Medina,Richard L  | Boston Police Department | Police Sergeant (Det)   |    136699 |       0 |  5776.11 |     174080 |         0 |        0 |               0   |        316555 |   2023 |           5.94169 |
+|    80 | Acosta,Jose L     | Boston Police Department | Police Officer          |    109502 |       0 | 10665.1  |     174379 |         0 |        0 |               0   |        294546 |   2023 |           5.95346 |
+|    24 | Brown,Gregory     | Boston Police Department | Police Detective        |    111584 |       0 | 16762.8  |     179948 |         0 |        0 |               0   |        308294 |   2019 |           6.17259 |
 ## Conclusion
 
 The analysis reveals that overtime pay constitutes a significant and growing portion of the BPD's budget. Predictive models, especially nonlinear ones like XGBoost, effectively capture the factors influencing overtime spending. The identification of outliers suggests potential areas for policy review or audit to ensure fiscal responsibility.
