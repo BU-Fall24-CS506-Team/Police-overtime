@@ -138,6 +138,7 @@ To gain initial insights into the data, we conducted several preliminary visuali
   - `REGULAR` pay and `DETAIL` earnings also contribute meaningfully.
 - **Outlier Detection**: Identified several employees with overtime pay significantly higher than the norm, warranting further investigation.
 outlier information:
+
 |   _id | NAME              | DEPARTMENT_NAME          | TITLE                   |   REGULAR |   RETRO |    OTHER |   OVERTIME |   INJURED |   DETAIL |   QUINN_EDUCATION |   TOTAL_GROSS |   year |   Overtime_ZScore |
 |------:|:------------------|:-------------------------|:------------------------|----------:|--------:|---------:|-----------:|----------:|---------:|------------------:|--------------:|-------:|------------------:|
 |     7 | Demesmin,Stanley  | Boston Police Department | Police Lieutenant (Det) |    142466 |       0 | 15820.5  |     167510 |         0 |    24695 |           28198.5 |        378690 |   2021 |           5.68317 |
@@ -152,6 +153,7 @@ outlier information:
 |    40 | Medina,Richard L  | Boston Police Department | Police Sergeant (Det)   |    136699 |       0 |  5776.11 |     174080 |         0 |        0 |               0   |        316555 |   2023 |           5.94169 |
 |    80 | Acosta,Jose L     | Boston Police Department | Police Officer          |    109502 |       0 | 10665.1  |     174379 |         0 |        0 |               0   |        294546 |   2023 |           5.95346 |
 |    24 | Brown,Gregory     | Boston Police Department | Police Detective        |    111584 |       0 | 16762.8  |     179948 |         0 |        0 |               0   |        308294 |   2019 |           6.17259 |
+
 ## Conclusion
 
 The analysis reveals that overtime pay constitutes a significant and growing portion of the BPD's budget. Predictive models, especially nonlinear ones like XGBoost, effectively capture the factors influencing overtime spending. The identification of outliers suggests potential areas for policy review or audit to ensure fiscal responsibility.
