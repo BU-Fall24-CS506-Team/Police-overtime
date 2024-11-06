@@ -14,7 +14,7 @@ The main objectives of this project are:
 - To identify outliers in the distribution of ratios of overtime worked vs. overtime paid.
 - To explore demographic factors (e.g., officer rank, tenure, gender, and race) and their influence on overtime pay discrepancies.
 - To create visualizations that illustrate trends and anomalies in overtime payments.
-after midterm
+### More things todo
 - improve the model that analyze the year-over-year changes in BPD overtime budgets.
 - Look into the outlier data, see if any patteren.
 
