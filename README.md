@@ -4,7 +4,7 @@ link to midterm report presentation: https://youtu.be/xTYDWAY1ZKY
 
 This project aims to analyze the overtime budget and expenditure patterns within the Boston Police Department (BPD). The BPD operates on an annual budget exceeding $400 million, a portion of which goes toward overtime pay for officers. Our goal is to investigate how the overtime budget is allocated and whether discrepancies exist between overtime hours worked and paid. We will also explore whether certain demographic groups of officers, such as those with longer tenure or specific ranks, have a higher likelihood of overtime discrepancies. By performing this analysis, we hope to provide insights into potential areas of inefficiency or bias in police spending, contributing to ongoing conversations around police accountability and financial transparency.
 
-## 2. Clear Goal(s)
+## 2. Clear Goal(s)(what will will do)
 
 The main objectives of this project are:
 
@@ -14,6 +14,11 @@ The main objectives of this project are:
 - To identify outliers in the distribution of ratios of overtime worked vs. overtime paid.
 - To explore demographic factors (e.g., officer rank, tenure, gender, and race) and their influence on overtime pay discrepancies.
 - To create visualizations that illustrate trends and anomalies in overtime payments.
+after midterm
+- improve the model that analyze the year-over-year changes in BPD overtime budgets.
+- Look into the outlier data, see if any patteren.
+
+
 
 ## 3. Preliminary Visualizations of Data
 
