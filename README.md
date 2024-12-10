@@ -242,16 +242,13 @@ The combination of feature selection through correlation analysis and scaling of
 - **Interpretation**: The neural network underperformed compared to tree-based models, likely due to the limited dataset size and lack of feature engineering specific to deep learning.
 
 
-## 6. Preliminary Results
+## 6. Results
 
-- **Overtime Trend**: There is a clear upward trend in overtime spending within the BPD over the past decade.
-- **Model Performance**:
-  - **Linear Regression**: Provided a good fit with an R² of 0.823, suggesting linear relationships between features and overtime pay.
-  - **XGBoost Regression**: Achieved superior performance with an R² of 0.948, indicating that nonlinear models capture the data patterns more effectively.
-- **Feature Importance**:
-  - `TOTAL_GROSS` is the most significant predictor of overtime pay.
-  - `REGULAR` pay and `DETAIL` earnings also contribute meaningfully.
-- **Outlier Detection**: Identified several employees with overtime pay significantly higher than the norm, warranting further investigation.
+Predictive Modeling: 
+
+Successfully built and evaluated multiple models to predict overtime pay, with CatBoost providing the most accurate results (R² = 0.6607).
+
+**Outlier Detection**: Identified several employees with overtime pay significantly higher than the norm, warranting further investigation.
 outlier information:
 
 |   _id | NAME              | DEPARTMENT_NAME          | TITLE                   |   REGULAR |   RETRO |    OTHER |   OVERTIME |   INJURED |   DETAIL |   QUINN_EDUCATION |   TOTAL_GROSS |   year |   Overtime_ZScore |
@@ -269,8 +266,37 @@ outlier information:
 |    80 | Acosta,Jose L     | Boston Police Department | Police Officer          |    109502 |       0 | 10665.1  |     174379 |         0 |        0 |               0   |        294546 |   2023 |           5.95346 |
 |    24 | Brown,Gregory     | Boston Police Department | Police Detective        |    111584 |       0 | 16762.8  |     179948 |         0 |        0 |               0   |        308294 |   2019 |           6.17259 |
 
-## Conclusion
 
-The analysis reveals that overtime pay constitutes a significant and growing portion of the BPD's budget. Predictive models, especially nonlinear ones like XGBoost, effectively capture the factors influencing overtime spending. The identification of outliers suggests potential areas for policy review or audit to ensure fiscal responsibility.
+This project successfully met its objectives by providing a comprehensive analysis of the Boston Police Department's (BPD) overtime budget and spending patterns. The key findings and insights align with the stated goals, offering valuable contributions to the understanding of potential inefficiencies, discrepancies, and biases in overtime allocation. Here is how the project addressed each goal:
+
+1. **Investigating Overtime Budget Allocation and Discrepancies**  
+   The analysis revealed significant disparities in overtime pay among demographic groups, as well as outliers with disproportionately high overtime earnings. These findings were achieved through:
+   - **Visualizations**: Highlighting overtime trends, such as the steady increase in overtime spending from $57.9 million in 2014 to $88.5 million in 2023, and the disproportionate distribution of overtime pay across ethnic groups and genders.
+   - **Outlier Analysis**: Using Z-scores, we identified specific employees with unusually high overtime pay relative to their peers, indicating potential inefficiencies or discrepancies in the allocation process.
+
+2. **Exploring Demographic Disparities in Overtime Pay**  
+   The project successfully identified correlations between demographic factors (e.g., ethnicity, gender) and overtime pay:
+   - **Ethnic Disparities**: Black employees earned 38% more in overtime than Asian employees, raising questions about workload distribution or access to overtime opportunities.
+   - **Gender Disparities**: Male employees consistently earned more overtime pay than their female counterparts, despite similar regular pay, suggesting possible inequities in overtime assignments.
+   - **Rank and Tenure**: Outliers were often associated with higher-ranking positions (e.g., Lieutenants and Sergeants), indicating that rank may play a significant role in overtime distribution.
+
+3. **Insights into Potential Inefficiencies and Bias**  
+   The combination of predictive modeling and statistical analysis uncovered potential inefficiencies and biases in the allocation of overtime:
+   - Models like CatBoost and LightGBM provided strong predictive performance (R² = 0.66 and 0.6573, respectively), emphasizing the importance of regular pay (`REGULAR`) and demographic factors (`SEX`, `ETHNIC_GRP`) in predicting overtime pay.
+   - Identified outliers suggest areas where policy revisions or further investigations are necessary to ensure fair and transparent practices.
+
+4. **Contributing to Accountability and Transparency**  
+   By creating a detailed dataset, performing advanced modeling, and presenting clear visualizations, this project contributes to the ongoing conversation around police accountability and financial transparency:
+   - The findings underscore the need for data-driven approaches to manage payroll inefficiencies and address demographic disparities.
+   - The identification of specific outliers provides actionable insights for policy-makers to review and optimize overtime allocation processes.
+
+### Key Findings
+- Overtime spending has grown significantly over the past decade, with notable spikes in 2018 and 2023.
+- Disparities exist in overtime pay across demographic groups, with males and certain ethnic groups receiving higher overtime compensation.
+- High-ranking officers, such as Lieutenants and Sergeants, are often outliers with disproportionately high overtime pay.
+- Predictive models highlight regular pay and demographic factors as critical predictors of overtime pay, suggesting systemic patterns in allocation.
+
+### Conclusion
+This analysis offers a strong foundation for understanding and addressing inefficiencies and potential biases in overtime allocation within the BPD. By shedding light on these issues, the project paves the way for informed decision-making and policy reforms to promote equity, accountability, and financial transparency in public spending.
 
 ---
