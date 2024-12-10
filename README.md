@@ -3,7 +3,7 @@
 
 This project aims to analyze the overtime budget and expenditure patterns within the Boston Police Department (BPD). The BPD operates on an annual budget exceeding $400 million, a portion of which goes toward overtime pay for officers. Our goal is to investigate how the overtime budget is allocated and whether discrepancies exist between overtime hours worked and paid. We will also explore whether certain demographic groups of officers, such as those with longer tenure or specific ranks, have a higher likelihood of overtime discrepancies. By performing this analysis, we hope to provide insights into potential areas of inefficiency or bias in police spending, contributing to ongoing conversations around police accountability and financial transparency.
 
-## 2. Clear Goal(s)(what we will do)
+## 2. Goal
 
 The main objectives of this project are:
 
@@ -31,6 +31,7 @@ Insights:
 The data reveals significant disparities in overtime earnings among different ethnic groups.
 Black employees have the highest average overtime pay, followed closely by Hispanic and White employees.
 Asian employees appear to earn lower average overtime pay compared to other groups.
+Black employees earn 38% more on overtime than Asian employees.
 
 2. Average Overtime by Sex
 
