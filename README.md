@@ -106,10 +106,40 @@ A dip around 2020 might be attributable to pandemic-related disruptions or other
 - **Imputation**: Filled missing values in income-related columns with zero, assuming no earnings in those categories.
 - **Column Dropping**: Removed irrelevant columns such as `NAME`, `_id`, and `DEPARTMENT_NAME` to streamline the dataset.
 
-### Feature Scaling and Encoding
+### Feature Selection
 
-- **Standardization**: Applied `StandardScaler` to numeric features to normalize the data.
-- **Feature Selection**: Calculated correlations and Variance Inflation Factor (VIF) to identify and remove multicollinear features.
+Method:
+Feature selection was conducted through correlation analysis to identify the most relevant features for predicting overtime pay. The correlation matrix below highlights the relationships between different features and overtime pay.
+
+![correlation_matrix](https://github.com/user-attachments/assets/5a96f6d8-e923-4328-9fe0-4db85584f181)
+
+Analysis:
+
+- The feature most strongly correlated with overtime pay is total_gross (correlation = 0.66), which reflects the overall compensation of an employee, including overtime and other pay components.
+- Other moderately correlated features include:
+regular (correlation = 0.39): Indicates that regular pay has a positive relationship with overtime pay.
+quinn_education (correlation = 0.25): Suggests that educational incentives contribute modestly to overtime earnings.
+year (correlation = 0.17): Indicates slight temporal variation in overtime patterns.
+injured (correlation = 0.15): Suggests a minor relationship between injury compensation and overtime.
+- Features with low correlations (e.g., detail, postal) were deemed less relevant for predicting overtime and excluded from further analysis to simplify the model.
+
+### Scaling
+Method:
+
+Numerical features were standardized using StandardScaler to ensure that all variables were on the same scale. This step was essential for improving model performance, especially for algorithms sensitive to feature magnitude, such as regression models and clustering algorithms.
+
+Implementation:
+
+- Training data was scaled using scaler.fit_transform() to calculate the scaling parameters (mean and variance).
+- Test data was scaled using scaler.transform() to ensure consistency with the training data.
+
+Benefits:
+
+- Scaling prevented features with larger ranges, such as total_gross, from dominating the model during training.
+- Improved convergence for optimization algorithms and enhanced model interpretability.
+
+The combination of feature selection through correlation analysis and scaling of numerical features ensured that the models were trained on the most relevant and normalized data. This approach minimized noise, reduced computation complexity, and maximized predictive performance.
+
 
 ### Outlier Detection
 
