@@ -6,7 +6,7 @@ numpy
 pandas
 requests
 seaborn
-sklearn
+scikit-learn
 tensorflow
 xgboost
 flake8
