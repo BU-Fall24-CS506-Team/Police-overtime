@@ -151,45 +151,96 @@ The combination of feature selection through correlation analysis and scaling of
 ### Linear Regression
 
 - **Objective**: To predict overtime pay based on other salary components.
-- **Features Used**: `REGULAR`, `RETRO`, `DETAIL`, `QUINN_EDUCATION`, `TOTAL_GROSS`, `INJURED`.
+- **Features Used**: REGULAR, RETRO, DETAIL, QUINN_EDUCATION, TOTAL_GROSS, INJURED.
 - **Results**:
-  - **R² Score**: 0.823
-  - **Mean Absolute Error**: Approximately \$6,429
-- **Interpretation**: The model explains about 82% of the variance in overtime pay, indicating a strong linear relationship.
+  - **MAE**: 13,658.90
+  - **RMSE**: 18,045.85
+  - **R²**: 0.4856
+- **Interpretation**: Linear regression explained 48.56% of the variance in overtime pay, indicating a moderate linear relationship.
 
-### Quantile Regression
+### Ridge Regression
 
-- **Objective**: To model the median of the overtime pay distribution.
+- **Objective**: To improve upon linear regression by applying L2 regularization.
+- **Features Used**: REGULAR, RETRO, DETAIL, QUINN_EDUCATION, TOTAL_GROSS, INJURED.
 - **Results**:
-  - **R² Score**: Negative, indicating poor model fit.
-- **Interpretation**: Quantile regression did not perform well, suggesting that the median is not a good predictor for this dataset.
+  - **MAE**: 13,658.96
+  - **RMSE**: 18,045.90
+  - **R²**: 0.4856
+- **Interpretation**: Ridge regression performed similarly to linear regression, with no significant improvement in predictive accuracy.
 
-### XGBoost Regression
+### Lasso Regression
 
-- **Objective**: To improve prediction accuracy using a boosted tree model.
+- **Objective**: To prevent overfitting by penalizing large coefficients through L1 regularization.
+- **Features Used**: REGULAR, RETRO, DETAIL, QUINN_EDUCATION, TOTAL_GROSS, INJURED.
 - **Results**:
-  - **R² Score**: 0.948
-  - **Mean Absolute Error**: Approximately \$3,121
+  - **MAE**: 13,658.90
+  - **RMSE**: 18,045.85
+  - **R²**: 0.4856
+- **Interpretation**: Lasso regression performed identically to linear regression, suggesting minimal overfitting in the baseline model.
+
+### ElasticNet Regression
+
+- **Objective**: To combine the strengths of L1 (Lasso) and L2 (Ridge) regularization.
+- **Features Used**: REGULAR, RETRO, DETAIL, QUINN_EDUCATION, TOTAL_GROSS, INJURED.
+- **Results**:
+  - **MAE**: 13,662.99
+  - **RMSE**: 18,049.17
+  - **R²**: 0.4854
+- **Interpretation**: ElasticNet regression provided comparable performance to Lasso and Ridge, with no significant improvement in predictive power.
+
+### Random Forest
+
+- **Objective**: To capture nonlinear relationships between features and overtime pay.
+- **Features Used**: All selected numerical and categorical features.
+- **Results**:
+  - **MAE**: 11,694.57
+  - **RMSE**: 15,919.11
+  - **R²**: 0.5997
+- **Interpretation**: Random Forest improved accuracy over linear models by capturing complex patterns in the data.
+
+### XGBoost
+
+- **Objective**: To enhance prediction accuracy using a boosted tree model.
+- **Features Used**: YEAR, REGULAR, SAL_PLAN, ETHNIC_GRP, SEX.
+- **Results**:
+  - **MAE**: 11,211.49
+  - **RMSE**: 15,126.04
+  - **R²**: 0.6386
 - **Feature Importance**:
-  - `TOTAL_GROSS` was the most significant feature.
-- **Interpretation**: XGBoost provided the best predictive performance, capturing nonlinear relationships in the data.
+  - **REGULAR**: 34.41%
+  - **SAL_PLAN**: 23.54%
+  - **SEX**: 18.88%
+  - **ETHNIC_GRP**: 13.07%
+  - **YEAR**: 10.10%
+- **Interpretation**: XGBoost outperformed other models, capturing nonlinear relationships and emphasizing the importance of regular pay.
 
-### Regularized Regression (Lasso)
+### LightGBM
 
-- **Objective**: To prevent overfitting by penalizing large coefficients.
+- **Objective**: To improve efficiency and accuracy with a lightweight boosting algorithm.
 - **Results**:
-  - **R² Score**: 0.823
-- **Interpretation**: Similar performance to linear regression, indicating that regularization did not significantly impact model accuracy.
+  - **MAE**: 11,079.17
+  - **RMSE**: 14,728.43
+  - **R²**: 0.6573
+- **Interpretation**: LightGBM delivered high predictive accuracy with faster computation compared to XGBoost.
 
-### K-Means Clustering
+### CatBoost
 
-- **Objective**: To identify clusters of employees with similar earning patterns and detect outliers.
-- **Method**:
-  - Used the Elbow Method to determine the optimal number of clusters (K=3).
-  - Applied K-Means clustering to standardized features.
+- **Objective**: To handle categorical data and boost prediction performance.
 - **Results**:
-  - Successfully identified groups and outliers.
-- **Interpretation**: Clustering revealed distinct patterns in earnings and highlighted individuals with exceptionally high overtime pay.
+  - **MAE**: 10,982.59
+  - **RMSE**: 14,655.08
+  - **R²**: 0.6607
+- **Interpretation**: CatBoost achieved the best overall performance, effectively handling categorical features without extensive preprocessing.
+
+### Neural Network
+
+- **Objective**: To capture complex relationships in the data using deep learning.
+- **Results**:
+  - **MAE**: 16,413.28
+  - **RMSE**: 22,018.26
+  - **R²**: 0.2342
+- **Interpretation**: The neural network underperformed compared to tree-based models, likely due to the limited dataset size and lack of feature engineering specific to deep learning.
+
 
 ## 6. Preliminary Results
 
