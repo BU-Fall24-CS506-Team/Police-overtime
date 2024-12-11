@@ -133,7 +133,9 @@ Insights:
 
 ### Data Collection
 
-- **Data Sources**: Salary data from 2014 to 2023 was downloaded from the [Analyze Boston](https://data.boston.gov/) portal.
+- **Data Sources**:
+- Salary data from 2014 to 2023 was downloaded from the [Analyze Boston](https://data.boston.gov/) portal.
+- roster of boston police department from [woke windows](https://www.wokewindows.org/data_sources/roster_20200904)
 - **Data Directory**: All datasets were stored in a `data` directory for organized access.
 
 ### Data Cleaning and Standardization
