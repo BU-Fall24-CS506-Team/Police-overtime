@@ -1,5 +1,6 @@
 catboost
 flake8
+ipykernel
 jupyter
 keras
 lightgbm
@@ -13,3 +14,4 @@ scipy
 seaborn
 tensorflow
 xgboost
+xlrd==1.2.0
