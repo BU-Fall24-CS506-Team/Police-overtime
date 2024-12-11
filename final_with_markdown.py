@@ -1,4 +1,3 @@
-#import lib
 import os
 import requests
 import pandas as pd
@@ -7,7 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import tensorflow as tf
 from tensorflow import keras
-from tensorflow.keras import layers
+#from tensorflow.keras import layers
 
 import xgboost as xgb
 from xgboost import XGBRegressor
@@ -70,6 +69,8 @@ all_data = pd.concat(dataframes, ignore_index=True)
 # Display the combined data
 print(all_data.head(10))
 
+
+# ### From the add_data.head() above, we can see that due to each csv file having a different naming convention for headers, the data is a mess. The first step of the data cleaning is thus to standardize the data headers.
 
 ## ADD YEAR COLUMN TO EACH CSV FILE
 data_dir = 'data'
@@ -178,6 +179,8 @@ for year, headers in headers_dict.items():
     print(f"Year: {year}, Headers: {headers}")
     print("-" * 80)
 
+# With the data now being standardized across years, because the employee earnings data contains data for every public servant under the payroll of Boston, we need to extract the data only related to BPD (DEPARTMENT_NAME="Boston Police Department").
+
 ## EXTRACT DATA RELATED TO BPD
 
 # Initialize an empty list to store filtered DataFrames
@@ -207,6 +210,12 @@ merged_bpd_data = pd.concat(bpd_data, ignore_index=True)
 merged_bpd_data.to_csv('BPD_salary.csv', index=False)
 print("Merged data saved to BPD_salary.csv")
 
+
+# ## After this, there is still a problem with the numerical data columns, as some are prefixed with the `$` symbol and some are not. For easy data processing in the future, let us remove the use of `$` symbols altogether and convert the columns to a float type.
+# 
+# ### NOTE:
+#     There is also an abnormal row with an abnormal salary that we took account of:  
+#     16,"Hartgrove,Christopher A",Police Detective,Boston Police Department,($380.71),$174.05 ,"$16,078.64 ",,"$106,392.37 ",,,"$122,264.35 ",2066,2017
 
 ## REMOVE $ SYMBOLS FROM SALARY COLUMNS
 
@@ -403,6 +412,8 @@ plt.tight_layout()
 plt.show()
 print(merged_data.groupby('Ethnic Grp')['REGULAR'].mean().BLACK/merged_data.groupby('Ethnic Grp')['REGULAR'].mean().ASIAN)
 
+# ### black earn 1.8% of regular salary more than Asian but 38% more on overtime
+
 
 
 
@@ -449,6 +460,8 @@ print(merged_data.groupby('Sex')['OVERTIME'].mean().M/merged_data.groupby('Sex')
 
 
 
+
+
 salary_categories = ['REGULAR', 'RETRO', 'OTHER', 'OVERTIME', 'INJURED', 'DETAIL', 'QUINN_EDUCATION']
 
 # Group by 'year' and calculate the total amount spent for each salary category
@@ -480,6 +493,8 @@ plt.tight_layout()
 plt.savefig('total_amount_spent.png', dpi=300, bbox_inches='tight')
 plt.show()
 
+
+# # Data Preprocessing 
 
 #import pandas as pd
 
@@ -545,6 +560,8 @@ correlation = corr_matrix[target].abs().sort_values(ascending=False)
 print(correlation)
 
 
+# ## outlier
+
 from scipy.stats import zscore
 
 # Calculate the Z-scores for the OVERTIME column
@@ -555,6 +572,21 @@ outlier_threshold = 5
 outliers = data_full[np.abs(data_full['Overtime_ZScore']) > outlier_threshold]
 #markdown_table = outliers.to_markdown(index=False)
 #print(markdown_table)
+
+# |   _id | name              | department_name          | title                          |   regular |   retro |    other |   overtime |   injured |   detail |   quinn_education |   total_gross |   postal |   year | ln,fn             | job_title                      | ethnic_grp   | sex   | sal_plan   |   Overtime_ZScore |
+# |------:|:------------------|:-------------------------|:-------------------------------|----------:|--------:|---------:|-----------:|----------:|---------:|------------------:|--------------:|---------:|-------:|:------------------|:-------------------------------|:-------------|:------|:-----------|------------------:|
+# |    10 | Barrett,Thomas E. | Boston Police Department | Police Sergeant (Det)          |    130930 | 3170.12 | 16724    |     166042 |         0 |  12515.5 |           32732.7 |        346429 |    02132 |   2021 | Barrett,Thomas E. | Police Sergeant (Det)          | WHITE        | M     | PSD        |           5.27183 |
+# |    15 | Barrett,Thomas E. | Boston Police Department | Police Sergeant (Det)          |    130930 | 3170.12 | 16724    |     163495 |         0 |  12515.5 |           32732.7 |        343881 |    02132 |   2022 | Barrett,Thomas E. | Police Sergeant (Det)          | WHITE        | M     | PSD        |           5.17088 |
+# |    10 | Barrett,Thomas E. | Boston Police Department | Police Sergeant (Det)          |    130930 | 3170.12 | 19672.8  |     180548 |         0 |  12515.5 |           32732.7 |        363884 |    02132 |   2023 | Barrett,Thomas E. | Police Sergeant (Det)          | WHITE        | M     | PSD        |           5.84669 |
+# |    12 | Brown,Michael A   | Boston Police Department | Police Sergeant (Det)          |    130930 | 3170.12 | 13775.1  |     172605 |         0 |  12515.5 |           32732.7 |        350043 |    02050 |   2023 | Brown,Michael A   | Police Sergeant (Det)          | WHITE        | M     | PSD        |           5.53192 |
+# |    17 | Johnson,Rick E    | Boston Police Department | Police Sergeant (Det)          |    127627 | 3170.12 | 19246.7  |     163204 |         0 |  12515.5 |           31906.9 |        341985 |    02072 |   2023 | Johnson,Rick E    | Police Sergeant (Det)          | BLACK        | M     | PSD        |           5.15937 |
+# |    40 | Medina,Richard L  | Boston Police Department | Police Sergeant (Det)          |    136699 | 3170.12 |  5776.11 |     174080 |         0 |  12515.5 |           17932.2 |        316555 |    02081 |   2023 | Medina,Richard L  | Police Sergeant (Det)          | HISPA        | M     | PSD        |           5.59034 |
+# |    80 | Acosta,Jose L     | Boston Police Department | Police Officer                 |    109502 | 3170.12 | 10665.1  |     174379 |         0 |  12515.5 |           17932.2 |        294546 |    01960 |   2023 | Acosta,Jose L     | Police Officer                 | HISPA        | M     | PO         |           5.6022  |
+# |    24 | Brown,Gregory     | Boston Police Department | Police Detective               |    111584 | 3170.12 | 16762.8  |     179948 |         0 |  12515.5 |           17932.2 |        308294 |     2301 |   2019 | Brown,Gregory     | Police Detective               | BLACK        | M     | PD         |           5.82289 |
+# |    99 | Acosta,Jose L     | Boston Police Department | Police Officer                 |    107498 | 3170.12 |  3203.82 |     161540 |         0 |   1840   |           17932.2 |        274083 |     1960 |   2019 | Acosta,Jose L     | Police Officer                 | HISPA        | M     | PO         |           5.09343 |
+# | 10699 | Kervin,Timothy M. | Boston Police Department | Police Lieutenant/Hdq Dispatch |    126188 |    0    | 18482.9  |     162651 |         0 |  18096   |           22678.8 |        348097 |    02135 |   2015 | Kervin,Timothy M. | Police Lieutenant/Hdq Dispatch | WHITE        | M     | PSO        |           5.13744 |
+
+# ## model
 
 # Define features and target
 X = data[['total_gross', 'year', 'regular', 'sal_plan', 'injured', 'sex', 'quinn_education', 'retro']]
@@ -736,6 +768,8 @@ print("\nNeural Network Results:")
 print(f"Mean Absolute Error: {mae_nn}")
 print(f"Root Mean Squared Error: {rmse_nn}")
 print(f"R^2 Score: {r2_nn}")
+
+
 
 
 
