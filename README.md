@@ -30,11 +30,11 @@ The main objectives of this project are:
 
 
 
-## 3.Visualizations of Data
+## 3.Visualizations and analyze of Data
 
 To gain insights into the data, we conducted several visualizations:
 
-1. Average Overtime by Ethnic Group
+1. **Average Overtime by Ethnic Group**
 
 This bar chart shows the average overtime pay grouped by ethnic group categories. Each bar represents a specific ethnic group, and the height of the bar corresponds to the mean overtime earnings for that group.
 ![average_overtime](https://github.com/user-attachments/assets/fce4c8ae-4f01-4a62-ad77-c34359e64da4)
@@ -47,7 +47,7 @@ Black employees have the highest average overtime pay, followed closely by Hispa
 Asian employees appear to earn lower average overtime pay compared to other groups.
 Black employees earn 38% more on overtime than Asian employees.
 
-2. Average Overtime by Sex
+2. **Average Overtime by Sex**
 
 This bar chart compares the average overtime pay between male and female employees. The height of each bar indicates the mean overtime pay for each gender.
 ![average_overtime_sex](https://github.com/user-attachments/assets/5b89ecaa-aef8-461d-bf88-b763809e12bb)
@@ -58,7 +58,7 @@ Male employees earn significantly higher average overtime pay compared to female
 This disparity raises questions about workload distribution, availability, or access to overtime opportunities among genders.
 
 
-3. Average Regular Pay by Sex
+3. **Average Regular Pay by Sex**
 
 This bar chart compares the average regular pay between male and female employees. Similar to the overtime chart, the height of each bar indicates the mean regular pay.
 ![average_regular_sex](https://github.com/user-attachments/assets/d992f6b2-7e30-4d74-ba1d-03e96dc0a1d4)
@@ -68,7 +68,7 @@ Insights:
 The average regular pay for males and females is relatively similar, suggesting parity in base salaries.
 The disparity observed in overtime pay is not reflected in regular pay, hinting at differences in work assignments or additional pay structures.
 
-4. Average Regular Pay by Ethnic Group
+4. **Average Regular Pay by Ethnic Group**
 
 This bar chart shows the average regular pay grouped by ethnic categories. Each bar represents a specific ethnic group, and its height corresponds to the mean regular earnings.
 ![average_regular_ethnic](https://github.com/user-attachments/assets/623cf19f-c8bf-4268-99a3-389f7a809929)
@@ -78,7 +78,7 @@ Insights:
 There is minimal variation in regular pay among different ethnic groups, indicating equitable distribution of base salaries.
 This contrasts with the disparities seen in overtime pay, suggesting potential inequities in work assignments or overtime opportunities.
 
-5. Total Amount Spent on Each Salary Category per Year
+5. **Total Amount Spent on Each Salary Category per Year**
 
 This stacked bar chart visualizes the total yearly expenditure for various salary components, including regular pay, overtime, detail pay, injured pay, and Quinn education incentives. Each bar represents a year, and the different colors correspond to different salary categories.
 ![toal_spent_each](https://github.com/user-attachments/assets/b4b5dcf9-b056-44a6-b3e3-1d061d34d2e4)
@@ -90,7 +90,7 @@ Other salary components, such as Quinn education incentives and detail pay, have
 Spikes in total spending, such as those seen in 2018 and 2023, suggest extraordinary circumstances or policy changes.
 
 
-6. Total Amount Spent on Each Salary Category per Year
+6. **Total Amount Spent on Each Salary Category per Year**
 
 This stacked bar chart visualizes the average expenditure for various salary components (e.g., regular pay, overtime, detail pay, injured pay, Quinn education incentives) across different 'Sal Plan' categories. Each bar represents a specific 'Sal Plan', and the stacked sections correspond to different salary components. This allows for a direct comparison of how each category contributes to the overall compensation structure.
 
@@ -101,14 +101,14 @@ This stacked bar chart visualizes the average expenditure for various salary com
 - **PSD:** Police Sergeant Detective (sergeants serving in investigative capacities)
 - **PSO:** Police Superior Officer (supervisory ranks such as sergeants and lieutenants)
 
-![total_spent_each](https://github.com/user-attachments/assets/f2e98c60-0b39-46df-b4e9-bb1038ca1394)
+![total_spent sca](https://github.com/user-attachments/assets/f2e98c60-0b39-46df-b4e9-bb1038ca1394)
 
 Insights:
 - Overtime and Injured Pay Significance: Overtime and injured pay, though smaller than regular pay, still constitute substantial portions. This may indicate that staffing decisions, scheduling, or departmental policies influence these earnings.
 - Variations by Salary Plan: Different salary plans (PC, PD, PO, PSD, PSO) display variations in the composition of pay categories, reflecting differences in roles, responsibilities, and departmental hierarchy.
 
 
-7. Total Amount Spent on Overtime per Year
+7. **Total Amount Spent on Overtime per Year**
 
 This line chart illustrates the annual total expenditure on overtime pay from 2014 to 2023. A table below the chart lists the exact overtime amounts for each year.
 ![total_spent_peryear](https://github.com/user-attachments/assets/854fa122-04f9-427b-baf7-5a47466c15c9)
@@ -117,6 +117,15 @@ Insights:
 The overtime expenditure shows a steady upward trend, starting at approximately $57.9 million in 2014 and reaching $88.5 million in 2023.
 Significant increases are observed in 2018 and 2023, which may correlate with operational or policy changes.
 A dip around 2020 might be attributable to pandemic-related disruptions or other unique circumstances.
+
+8. **Injury Pay Analysis**
+This analysis examines the proportion of officers receiving injury pay over the last decade and the average total amount paid per officer during that time frame, rather than per individual case. The pie chart below shows that approximately 41% of officers received injury pay from 2014 to 2023. Among those recipients, the average total injury pay over 10 years was about \$84,408.16 per person.
+![image](https://github.com/user-attachments/assets/e381c3da-057e-442f-b3ef-e1240a04dccf)
+Insights:
+- A significant portion (41%) of officers received injury pay.
+- Each recipient received an average of \$84,408.16 in total over 10 years.
+
+
 
 ## 4. Data Processing
 
