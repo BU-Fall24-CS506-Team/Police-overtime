@@ -89,7 +89,26 @@ Overtime spending has increased over time, reflecting operational demands or pot
 Other salary components, such as Quinn education incentives and detail pay, have remained relatively stable.
 Spikes in total spending, such as those seen in 2018 and 2023, suggest extraordinary circumstances or policy changes.
 
-6. Total Amount Spent on Overtime per Year
+
+6. Total Amount Spent on Each Salary Category per Year
+
+This stacked bar chart visualizes the average expenditure for various salary components (e.g., regular pay, overtime, detail pay, injured pay, Quinn education incentives) across different 'Sal Plan' categories. Each bar represents a specific 'Sal Plan', and the stacked sections correspond to different salary components. This allows for a direct comparison of how each category contributes to the overall compensation structure.
+
+**Key Salary Plans:**
+- **PC:** Police Captain (senior leadership roles within the department)
+- **PD:** Police Detective (officers assigned to investigative duties)
+- **PO:** Police Officer (base-level patrol and general duty officers)
+- **PSD:** Police Sergeant Detective (sergeants serving in investigative capacities)
+- **PSO:** Police Superior Officer (supervisory ranks such as sergeants and lieutenants)
+
+![total_spent_each](![image](https://github.com/user-attachments/assets/f2e98c60-0b39-46df-b4e9-bb1038ca1394)
+
+**Insights:**
+- **Overtime and Injured Pay Significance:** Overtime and injured pay, though smaller than regular pay, still constitute substantial portions. This may indicate that staffing decisions, scheduling, or departmental policies influence these earnings.
+- **Variations by Salary Plan:** Different salary plans (PC, PD, PO, PSD, PSO) display variations in the composition of pay categories, reflecting differences in roles, responsibilities, and departmental hierarchy.
+
+
+7. Total Amount Spent on Overtime per Year
 
 This line chart illustrates the annual total expenditure on overtime pay from 2014 to 2023. A table below the chart lists the exact overtime amounts for each year.
 ![total_spent_peryear](https://github.com/user-attachments/assets/854fa122-04f9-427b-baf7-5a47466c15c9)
