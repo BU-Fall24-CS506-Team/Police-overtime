@@ -103,9 +103,9 @@ This stacked bar chart visualizes the average expenditure for various salary com
 
 ![total_spent_each](https://github.com/user-attachments/assets/f2e98c60-0b39-46df-b4e9-bb1038ca1394)
 
-**Insights:**
-- **Overtime and Injured Pay Significance:** Overtime and injured pay, though smaller than regular pay, still constitute substantial portions. This may indicate that staffing decisions, scheduling, or departmental policies influence these earnings.
-- **Variations by Salary Plan:** Different salary plans (PC, PD, PO, PSD, PSO) display variations in the composition of pay categories, reflecting differences in roles, responsibilities, and departmental hierarchy.
+Insights:
+- Overtime and Injured Pay Significance: Overtime and injured pay, though smaller than regular pay, still constitute substantial portions. This may indicate that staffing decisions, scheduling, or departmental policies influence these earnings.
+- Variations by Salary Plan: Different salary plans (PC, PD, PO, PSD, PSO) display variations in the composition of pay categories, reflecting differences in roles, responsibilities, and departmental hierarchy.
 
 
 7. Total Amount Spent on Overtime per Year
