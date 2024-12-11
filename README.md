@@ -275,10 +275,11 @@ The combination of feature selection through correlation analysis and scaling of
 
 - **Objective**: To capture complex relationships in the data using deep learning.
 - **Results**:
-  - **MAE**: 16,413.28
-  - **RMSE**: 22,018.26
-  - **R²**: 0.2342
-- **Interpretation**: The neural network underperformed compared to tree-based models, likely due to the limited dataset size and lack of feature engineering specific to deep learning.
+  - **MAE**: 12,898.89416
+  - **RMSE**: 16949.71850
+  - **R²**: 0.5462
+- **Interpretation**: The neural network underperformed compared to other machine learning models, likely due to the limited dataset size and lack of feature engineering specific to deep learning.
+
 
 
 ## 6. Results
