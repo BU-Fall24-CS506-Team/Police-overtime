@@ -283,7 +283,7 @@ The combination of feature selection through correlation analysis and scaling of
 
 Predictive Modeling: 
 
-Successfully built and evaluated multiple models to predict overtime pay, with CatBoost providing the most accurate results (R² = 0.6607).
+Successfully built and evaluated multiple models to predict overtime pay, with CatBoost providing the most accurate results (R² = 0.73654 for all features, 0.6529 for restricted features).
 
 **Outlier Detection**: Identified several employees with overtime pay significantly higher than the norm, warranting further investigation.
 outlier information:
