@@ -2,6 +2,7 @@
 
 # Define variables
 VENV_DIR = .venv
+ACTIVATE = . $(VENV_DIR)/bin/activate
 PYTHON = $(VENV_DIR)/bin/python
 PIP = $(VENV_DIR)/bin/pip
 JUPYTER = $(VENV_DIR)/bin/jupyter
@@ -12,12 +13,12 @@ venv:
 
 # Install dependencies inside the virtual environment
 install: venv
-	$(PIP) install --upgrade pip
-	$(PIP) install -r requirements.txt
+	$(ACTIVATE) && $(PIP) install --upgrade pip
+	$(ACTIVATE) && $(PIP) install -r requirements.txt
 
 # Run the Jupyter Notebook in the virtual environment
 run: install
-	$(JUPYTER) nbconvert --to notebook --execute final.ipynb --output final.ipynb
+	$(ACTIVATE) && $(JUPYTER) nbconvert --to notebook --execute final.ipynb --output final.ipynb
 
 # Clean up generated files (optional)
 clean:
