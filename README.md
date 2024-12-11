@@ -12,7 +12,6 @@ Commands
 
 `make run`
 
-
 ## 1. Description of the Project
 
 This project aims to analyze the overtime budget and expenditure patterns within the Boston Police Department (BPD). The BPD operates on an annual budget exceeding $400 million, a portion of which goes toward overtime pay for officers. Our goal is to investigate how the overtime budget is allocated and whether discrepancies exist between overtime hours worked and paid. We will also explore whether certain demographic groups of officers, such as those with longer tenure or specific ranks, have a higher likelihood of overtime discrepancies. By performing this analysis, we hope to provide insights into potential areas of inefficiency or bias in police spending, contributing to ongoing conversations around police accountability and financial transparency.
@@ -28,8 +27,6 @@ The main objectives of this project are:
 - To explore demographic factors (e.g., officer rank, tenure, gender, and race) and their influence on overtime pay discrepancies.
 - To create visualizations that illustrate trends and anomalies in overtime payments.
 
-
-
 ## 3.Visualizations and analyze of Data
 
 To gain insights into the data, we conducted several visualizations:
@@ -38,7 +35,6 @@ To gain insights into the data, we conducted several visualizations:
 
 This bar chart shows the average overtime pay grouped by ethnic group categories. Each bar represents a specific ethnic group, and the height of the bar corresponds to the mean overtime earnings for that group.
 ![average_overtime](https://github.com/user-attachments/assets/fce4c8ae-4f01-4a62-ad77-c34359e64da4)
-
 
 Insights:
 
@@ -52,18 +48,15 @@ Black employees earn 38% more on overtime than Asian employees.
 This bar chart compares the average overtime pay between male and female employees. The height of each bar indicates the mean overtime pay for each gender.
 ![download-1](https://github.com/user-attachments/assets/d35e8c9c-0e6a-46b1-b939-31a076919474)
 
-
 Insights:
 
 Male employees earn significantly higher average overtime pay compared to female employees.
 This disparity raises questions about workload distribution, availability, or access to overtime opportunities among genders.
 
-
 3. **Average Regular Pay by Sex**
 
 This bar chart compares the average regular pay between male and female employees. Similar to the overtime chart, the height of each bar indicates the mean regular pay.
 ![download](https://github.com/user-attachments/assets/a29efa83-1a8f-463d-ae20-35d9725563e6)
-
 
 Insights:
 
@@ -91,12 +84,12 @@ Overtime spending has increased over time, reflecting operational demands or pot
 Other salary components, such as Quinn education incentives and detail pay, have remained relatively stable.
 Spikes in total spending, such as those seen in 2018 and 2023, suggest extraordinary circumstances or policy changes.
 
-
 6. **Total Amount Spent on Each Salary Category per Year**
 
 This stacked bar chart visualizes the average expenditure for various salary components (e.g., regular pay, overtime, detail pay, injured pay, Quinn education incentives) across different 'Sal Plan' categories. Each bar represents a specific 'Sal Plan', and the stacked sections correspond to different salary components. This allows for a direct comparison of how each category contributes to the overall compensation structure.
 
 **Key Salary Plans:**
+
 - **PC:** Police Captain (senior leadership roles within the department)
 - **PD:** Police Detective (officers assigned to investigative duties)
 - **PO:** Police Officer (base-level patrol and general duty officers)
@@ -106,9 +99,9 @@ This stacked bar chart visualizes the average expenditure for various salary com
 ![total_spent sca](https://github.com/user-attachments/assets/f2e98c60-0b39-46df-b4e9-bb1038ca1394)
 
 Insights:
+
 - Overtime and Injured Pay Significance: Overtime and injured pay, though smaller than regular pay, still constitute substantial portions. This may indicate that staffing decisions, scheduling, or departmental policies influence these earnings.
 - Variations by Salary Plan: Different salary plans (PC, PD, PO, PSD, PSO) display variations in the composition of pay categories, reflecting differences in roles, responsibilities, and departmental hierarchy.
-
 
 7. **Total Amount Spent on Overtime per Year**
 
@@ -121,13 +114,12 @@ Significant increases are observed in 2018 and 2023, which may correlate with op
 A dip around 2020 might be attributable to pandemic-related disruptions or other unique circumstances.
 
 8. **Injury Pay Analysis**
-This analysis examines the proportion of officers receiving injury pay over the last decade and the average total amount paid per officer during that time frame, rather than per individual case. The pie chart below shows that approximately 41% of officers received injury pay from 2014 to 2023. Among those recipients, the average total injury pay over 10 years was about \$84,408.16 per person.
-![injury_pay_distribution (1)](https://github.com/user-attachments/assets/d7ad5605-7370-482f-ae43-994b06872407)
-Insights:
+   This analysis examines the proportion of officers receiving injury pay over the last decade and the average total amount paid per officer during that time frame, rather than per individual case. The pie chart below shows that approximately 41% of officers received injury pay from 2014 to 2023. Among those recipients, the average total injury pay over 10 years was about \$84,408.16 per person.
+   ![injury_pay_distribution (1)](https://github.com/user-attachments/assets/d7ad5605-7370-482f-ae43-994b06872407)
+   Insights:
+
 - A significant portion (41%) of officers received injury pay.
 - Each recipient received an average of \$84,408.16 in total over 10 years.
-
-
 
 ## 4. Data Processing
 
@@ -163,13 +155,14 @@ Analysis:
 
 - The feature most strongly correlated with overtime pay is total_gross (correlation = 0.66), which reflects the overall compensation of an employee, including overtime and other pay components.
 - Other moderately correlated features include:
-regular (correlation = 0.39): Indicates that regular pay has a positive relationship with overtime pay.
-quinn_education (correlation = 0.25): Suggests that educational incentives contribute modestly to overtime earnings.
-year (correlation = 0.17): Indicates slight temporal variation in overtime patterns.
-injured (correlation = 0.15): Suggests a minor relationship between injury compensation and overtime.
+  regular (correlation = 0.39): Indicates that regular pay has a positive relationship with overtime pay.
+  quinn_education (correlation = 0.25): Suggests that educational incentives contribute modestly to overtime earnings.
+  year (correlation = 0.17): Indicates slight temporal variation in overtime patterns.
+  injured (correlation = 0.15): Suggests a minor relationship between injury compensation and overtime.
 - Features with low correlations (e.g., detail, postal) were deemed less relevant for predicting overtime and excluded from further analysis to simplify the model.
 
 ### Scaling
+
 Method:
 
 Numerical features were standardized using StandardScaler to ensure that all variables were on the same scale. This step was essential for improving model performance, especially for algorithms sensitive to feature magnitude, such as regression models and clustering algorithms.
@@ -186,7 +179,6 @@ Benefits:
 
 The combination of feature selection through correlation analysis and scaling of numerical features ensured that the models were trained on the most relevant and normalized data. This approach minimized noise, reduced computation complexity, and maximized predictive performance.
 
-
 ### Outlier Detection
 
 - **Z-Score Method**: Calculated Z-scores for `OVERTIME` pay to identify outliers beyond a threshold of 5.
@@ -194,7 +186,7 @@ The combination of feature selection through correlation analysis and scaling of
 
 ## 5. Data Modeling Methods
 
-### XGBoost 
+### XGBoost
 
 - **Objective**: To improve prediction accuracy using a boosted tree model with additional features.
 - **Features Used**: TOTAL_GROSS, YEAR, REGULAR, SAL_PLAN, INJURED, SEX, QUINN_EDUCATION, RETRO.
@@ -205,7 +197,7 @@ The combination of feature selection through correlation analysis and scaling of
   - **Adjusted R²**: 0.7178490516815628
 - **Interpretation**: XGBoost with an expanded feature set significantly improved prediction performance, explaining about 71.86% of the variance. The inclusion of additional variables like REGULAR, INJURED, QUINN_EDUCATION, and RETRO helped capture more complex patterns in the data.
 
-### CatBoost 
+### CatBoost
 
 - **Objective**: To handle categorical data effectively and further leverage the additional features.
 - **Features Used**: TOTAL_GROSS, YEAR, REGULAR, SAL_PLAN, INJURED, SEX, QUINN_EDUCATION, RETRO.
@@ -277,51 +269,51 @@ The combination of feature selection through correlation analysis and scaling of
 
 - **Objective**: To capture complex relationships in the data using deep learning.
 - **Results**:
-  - **MAE**: 12,898.89416
-  - **RMSE**: 16949.71850
-  - **R²**: 0.5462
+  - **MAE**: 13,616.13
+  - **RMSE**: 18,309.12
+  - **R²**: 0.5176
 - **Interpretation**: The neural network underperformed compared to other machine learning models, likely due to the limited dataset size and lack of feature engineering specific to deep learning.
-
-
 
 ## 6. Results
 
-Predictive Modeling: 
+Predictive Modeling:
 
 Successfully built and evaluated multiple models to predict overtime pay, with CatBoost providing the most accurate results (R² = 0.73654 for all features, 0.6529 for restricted features).
 
 **Outlier Detection**: Identified several employees with overtime pay significantly higher than the norm, warranting further investigation.
 outlier information:
 
-|   _id | name              | department_name          | title                          |   regular |   retro |    other |   overtime |   injured |   detail |   quinn_education |   total_gross |   postal |   year | ln,fn             | job_title                      | ethnic_grp   | sex   | sal_plan   |   Overtime_ZScore |
-|------:|:------------------|:-------------------------|:-------------------------------|----------:|--------:|---------:|-----------:|----------:|---------:|------------------:|--------------:|---------:|-------:|:------------------|:-------------------------------|:-------------|:------|:-----------|------------------:|
-|    10 | Barrett,Thomas E. | Boston Police Department | Police Sergeant (Det)          |    130930 | 3170.12 | 16724    |     166042 |         0 |  12515.5 |           32732.7 |        346429 |    02132 |   2021 | Barrett,Thomas E. | Police Sergeant (Det)          | WHITE        | M     | PSD        |           5.27183 |
-|    15 | Barrett,Thomas E. | Boston Police Department | Police Sergeant (Det)          |    130930 | 3170.12 | 16724    |     163495 |         0 |  12515.5 |           32732.7 |        343881 |    02132 |   2022 | Barrett,Thomas E. | Police Sergeant (Det)          | WHITE        | M     | PSD        |           5.17088 |
-|    10 | Barrett,Thomas E. | Boston Police Department | Police Sergeant (Det)          |    130930 | 3170.12 | 19672.8  |     180548 |         0 |  12515.5 |           32732.7 |        363884 |    02132 |   2023 | Barrett,Thomas E. | Police Sergeant (Det)          | WHITE        | M     | PSD        |           5.84669 |
-|    12 | Brown,Michael A   | Boston Police Department | Police Sergeant (Det)          |    130930 | 3170.12 | 13775.1  |     172605 |         0 |  12515.5 |           32732.7 |        350043 |    02050 |   2023 | Brown,Michael A   | Police Sergeant (Det)          | WHITE        | M     | PSD        |           5.53192 |
-|    17 | Johnson,Rick E    | Boston Police Department | Police Sergeant (Det)          |    127627 | 3170.12 | 19246.7  |     163204 |         0 |  12515.5 |           31906.9 |        341985 |    02072 |   2023 | Johnson,Rick E    | Police Sergeant (Det)          | BLACK        | M     | PSD        |           5.15937 |
-|    40 | Medina,Richard L  | Boston Police Department | Police Sergeant (Det)          |    136699 | 3170.12 |  5776.11 |     174080 |         0 |  12515.5 |           17932.2 |        316555 |    02081 |   2023 | Medina,Richard L  | Police Sergeant (Det)          | HISPA        | M     | PSD        |           5.59034 |
-|    80 | Acosta,Jose L     | Boston Police Department | Police Officer                 |    109502 | 3170.12 | 10665.1  |     174379 |         0 |  12515.5 |           17932.2 |        294546 |    01960 |   2023 | Acosta,Jose L     | Police Officer                 | HISPA        | M     | PO         |           5.6022  |
-|    24 | Brown,Gregory     | Boston Police Department | Police Detective               |    111584 | 3170.12 | 16762.8  |     179948 |         0 |  12515.5 |           17932.2 |        308294 |     2301 |   2019 | Brown,Gregory     | Police Detective               | BLACK        | M     | PD         |           5.82289 |
-|    99 | Acosta,Jose L     | Boston Police Department | Police Officer                 |    107498 | 3170.12 |  3203.82 |     161540 |         0 |   1840   |           17932.2 |        274083 |     1960 |   2019 | Acosta,Jose L     | Police Officer                 | HISPA        | M     | PO         |           5.09343 |
-| 10699 | Kervin,Timothy M. | Boston Police Department | Police Lieutenant/Hdq Dispatch |    126188 |    0    | 18482.9  |     162651 |         0 |  18096   |           22678.8 |        348097 |    02135 |   2015 | Kervin,Timothy M. | Police Lieutenant/Hdq Dispatch | WHITE        | M     | PSO        |           5.13744 |
-
+|  \_id | name              | department_name          | title                          | regular |   retro |   other | overtime | injured |  detail | quinn_education | total_gross | postal | year | ln,fn             | job_title                      | ethnic_grp | sex | sal_plan | Overtime_ZScore |
+| ----: | :---------------- | :----------------------- | :----------------------------- | ------: | ------: | ------: | -------: | ------: | ------: | --------------: | ----------: | -----: | ---: | :---------------- | :----------------------------- | :--------- | :-- | :------- | --------------: |
+|    10 | Barrett,Thomas E. | Boston Police Department | Police Sergeant (Det)          |  130930 | 3170.12 |   16724 |   166042 |       0 | 12515.5 |         32732.7 |      346429 |  02132 | 2021 | Barrett,Thomas E. | Police Sergeant (Det)          | WHITE      | M   | PSD      |         5.27183 |
+|    15 | Barrett,Thomas E. | Boston Police Department | Police Sergeant (Det)          |  130930 | 3170.12 |   16724 |   163495 |       0 | 12515.5 |         32732.7 |      343881 |  02132 | 2022 | Barrett,Thomas E. | Police Sergeant (Det)          | WHITE      | M   | PSD      |         5.17088 |
+|    10 | Barrett,Thomas E. | Boston Police Department | Police Sergeant (Det)          |  130930 | 3170.12 | 19672.8 |   180548 |       0 | 12515.5 |         32732.7 |      363884 |  02132 | 2023 | Barrett,Thomas E. | Police Sergeant (Det)          | WHITE      | M   | PSD      |         5.84669 |
+|    12 | Brown,Michael A   | Boston Police Department | Police Sergeant (Det)          |  130930 | 3170.12 | 13775.1 |   172605 |       0 | 12515.5 |         32732.7 |      350043 |  02050 | 2023 | Brown,Michael A   | Police Sergeant (Det)          | WHITE      | M   | PSD      |         5.53192 |
+|    17 | Johnson,Rick E    | Boston Police Department | Police Sergeant (Det)          |  127627 | 3170.12 | 19246.7 |   163204 |       0 | 12515.5 |         31906.9 |      341985 |  02072 | 2023 | Johnson,Rick E    | Police Sergeant (Det)          | BLACK      | M   | PSD      |         5.15937 |
+|    40 | Medina,Richard L  | Boston Police Department | Police Sergeant (Det)          |  136699 | 3170.12 | 5776.11 |   174080 |       0 | 12515.5 |         17932.2 |      316555 |  02081 | 2023 | Medina,Richard L  | Police Sergeant (Det)          | HISPA      | M   | PSD      |         5.59034 |
+|    80 | Acosta,Jose L     | Boston Police Department | Police Officer                 |  109502 | 3170.12 | 10665.1 |   174379 |       0 | 12515.5 |         17932.2 |      294546 |  01960 | 2023 | Acosta,Jose L     | Police Officer                 | HISPA      | M   | PO       |          5.6022 |
+|    24 | Brown,Gregory     | Boston Police Department | Police Detective               |  111584 | 3170.12 | 16762.8 |   179948 |       0 | 12515.5 |         17932.2 |      308294 |   2301 | 2019 | Brown,Gregory     | Police Detective               | BLACK      | M   | PD       |         5.82289 |
+|    99 | Acosta,Jose L     | Boston Police Department | Police Officer                 |  107498 | 3170.12 | 3203.82 |   161540 |       0 |    1840 |         17932.2 |      274083 |   1960 | 2019 | Acosta,Jose L     | Police Officer                 | HISPA      | M   | PO       |         5.09343 |
+| 10699 | Kervin,Timothy M. | Boston Police Department | Police Lieutenant/Hdq Dispatch |  126188 |       0 | 18482.9 |   162651 |       0 |   18096 |         22678.8 |      348097 |  02135 | 2015 | Kervin,Timothy M. | Police Lieutenant/Hdq Dispatch | WHITE      | M   | PSO      |         5.13744 |
 
 This project successfully met its objectives by providing a comprehensive analysis of the Boston Police Department's (BPD) overtime budget and spending patterns. The key findings and insights align with the stated goals, offering valuable contributions to the understanding of potential inefficiencies, discrepancies, and biases in overtime allocation. Here is how the project addressed each goal:
 
 1. **Investigating Overtime Budget Allocation and Discrepancies**  
    The analysis revealed significant disparities in overtime pay among demographic groups, as well as outliers with disproportionately high overtime earnings. These findings were achieved through:
+
    - **Visualizations**: Highlighting overtime trends, such as the steady increase in overtime spending from $57.9 million in 2014 to $88.5 million in 2023, and the disproportionate distribution of overtime pay across ethnic groups and genders.
    - **Outlier Analysis**: Using Z-scores, we identified specific employees with unusually high overtime pay relative to their peers, indicating potential inefficiencies or discrepancies in the allocation process.
 
 2. **Exploring Demographic Disparities in Overtime Pay**  
    The project successfully identified correlations between demographic factors (e.g., ethnicity, gender) and overtime pay:
+
    - **Ethnic Disparities**: Black employees earned 38% more in overtime than Asian employees, raising questions about workload distribution or access to overtime opportunities.
    - **Gender Disparities**: Male employees consistently earned more overtime pay than their female counterparts, despite similar regular pay, suggesting possible inequities in overtime assignments.
    - **Rank and Tenure**: Outliers were often associated with higher-ranking positions (e.g., Lieutenants and Sergeants), indicating that rank may play a significant role in overtime distribution.
 
 3. **Insights into Potential Inefficiencies and Bias**  
    The combination of predictive modeling and statistical analysis uncovered potential inefficiencies and biases in the allocation of overtime:
+
    - Models like CatBoost and LightGBM provided strong predictive performance (R² = 0.66 and 0.6573, respectively), emphasizing the importance of regular pay (`REGULAR`) and demographic factors (`SEX`, `ETHNIC_GRP`) in predicting overtime pay.
    - Identified outliers suggest areas where policy revisions or further investigations are necessary to ensure fair and transparent practices.
 
@@ -331,12 +323,14 @@ This project successfully met its objectives by providing a comprehensive analys
    - The identification of specific outliers provides actionable insights for policy-makers to review and optimize overtime allocation processes.
 
 ### Key Findings
+
 - Overtime spending has grown significantly over the past decade, with notable spikes in 2018 and 2023.
 - Disparities exist in overtime pay across demographic groups, with males and certain ethnic groups receiving higher overtime compensation.
 - High-ranking officers, such as Lieutenants and Sergeants, are often outliers with disproportionately high overtime pay.
 - Predictive models highlight regular pay and demographic factors as critical predictors of overtime pay, suggesting systemic patterns in allocation.
 
 ### Conclusion
+
 This analysis offers a strong foundation for understanding and addressing inefficiencies and potential biases in overtime allocation within the BPD. By shedding light on these issues, the project paves the way for informed decision-making and policy reforms to promote equity, accountability, and financial transparency in public spending.
 
 ---
