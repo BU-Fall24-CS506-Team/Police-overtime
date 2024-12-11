@@ -190,7 +190,7 @@ The combination of feature selection through correlation analysis and scaling of
 
 ## 5. Data Modeling Methods
 
-### XGBoost (Additional Features)
+### XGBoost 
 
 - **Objective**: To improve prediction accuracy using a boosted tree model with additional features.
 - **Features Used**: TOTAL_GROSS, YEAR, REGULAR, SAL_PLAN, INJURED, SEX, QUINN_EDUCATION, RETRO.
@@ -201,7 +201,7 @@ The combination of feature selection through correlation analysis and scaling of
   - **Adjusted R²**: 0.7178490516815628
 - **Interpretation**: XGBoost with an expanded feature set significantly improved prediction performance, explaining about 71.86% of the variance. The inclusion of additional variables like REGULAR, INJURED, QUINN_EDUCATION, and RETRO helped capture more complex patterns in the data.
 
-### CatBoost (Additional Features)
+### CatBoost 
 
 - **Objective**: To handle categorical data effectively and further leverage the additional features.
 - **Features Used**: TOTAL_GROSS, YEAR, REGULAR, SAL_PLAN, INJURED, SEX, QUINN_EDUCATION, RETRO.
