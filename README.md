@@ -212,7 +212,7 @@ The combination of feature selection through correlation analysis and scaling of
   - **Adjusted R²**: 0.7358890681581455
 - **Interpretation**: CatBoost, with its adept handling of categorical variables and the expanded feature set, achieved the best performance. It explained approximately 73.65% of the variance, indicating that incorporating these additional features provided substantial improvements in prediction accuracy.
 
-## we consider the situation that the detail income information maybe hard to get, so we conduct other model only based on slaraly plan, ETHNIC Group, SEX, year, and total income.
+#### we consider the situation that the detail income information maybe hard to get, so we conduct other model only based on slaraly plan, ETHNIC Group, SEX, year, and total income.
 
 ### Linear Regression
 
