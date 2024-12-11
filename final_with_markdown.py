@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import tensorflow as tf
 from tensorflow import keras
-#from tensorflow.keras import layers
+from tensorflow.keras import layers
 
 import xgboost as xgb
 from xgboost import XGBRegressor
