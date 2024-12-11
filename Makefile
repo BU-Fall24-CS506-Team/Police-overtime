@@ -9,4 +9,4 @@ install:
 
 # Run the Jupyter Notebook
 run:
-	jupyter nbconvert --to notebook --execute final.ipynb --output executed_final.ipynb
+	jupyter nbconvert --to notebook --execute final.ipynb --output final.ipynb
