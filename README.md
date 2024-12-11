@@ -190,89 +190,84 @@ The combination of feature selection through correlation analysis and scaling of
 
 ## 5. Data Modeling Methods
 
+### XGBoost (Additional Features)
+
+- **Objective**: To improve prediction accuracy using a boosted tree model with additional features.
+- **Features Used**: TOTAL_GROSS, YEAR, REGULAR, SAL_PLAN, INJURED, SEX, QUINN_EDUCATION, RETRO.
+- **Results**:
+  - **MAE**: 9,566.74695456772
+  - **RMSE**: 13,985.146443003146
+  - **R²**: 0.7185522316150666
+  - **Adjusted R²**: 0.7178490516815628
+- **Interpretation**: XGBoost with an expanded feature set significantly improved prediction performance, explaining about 71.86% of the variance. The inclusion of additional variables like REGULAR, INJURED, QUINN_EDUCATION, and RETRO helped capture more complex patterns in the data.
+
+### CatBoost (Additional Features)
+
+- **Objective**: To handle categorical data effectively and further leverage the additional features.
+- **Features Used**: TOTAL_GROSS, YEAR, REGULAR, SAL_PLAN, INJURED, SEX, QUINN_EDUCATION, RETRO.
+- **Results**:
+  - **MAE**: 9,380.004708631892
+  - **RMSE**: 13,530.674605750635
+  - **R²**: 0.7365472885490286
+  - **Adjusted R²**: 0.7358890681581455
+- **Interpretation**: CatBoost, with its adept handling of categorical variables and the expanded feature set, achieved the best performance. It explained approximately 73.65% of the variance, indicating that incorporating these additional features provided substantial improvements in prediction accuracy.
+
+## we consider the situation that the detail income information maybe hard to get, so we conduct other model only based on slaraly plan, ETHNIC Group, SEX, year, and total income.
+
 ### Linear Regression
 
-- **Objective**: To predict overtime pay based on other salary components.
-- **Features Used**: REGULAR, RETRO, DETAIL, QUINN_EDUCATION, TOTAL_GROSS, INJURED.
+- **Objective**: To predict overtime pay based on selected features.
+- **Features Used**: YEAR, TOTAL_GROSS, SAL_PLAN, ETHNIC_GRP, SEX.
 - **Results**:
-  - **MAE**: 13,658.90
-  - **RMSE**: 18,045.85
-  - **R²**: 0.4856
-- **Interpretation**: Linear regression explained 48.56% of the variance in overtime pay, indicating a moderate linear relationship.
+  - **MAE**: 14,406.1290
+  - **RMSE**: 19,305.8103
+  - **R²**: 0.4637
+  - **Adjusted R²**: 0.4628
+- **Interpretation**: Linear regression explained approximately 46.37% of the variance in overtime pay, showing a moderate linear relationship.
 
 ### Ridge Regression
 
-- **Objective**: To improve upon linear regression by applying L2 regularization.
-- **Features Used**: REGULAR, RETRO, DETAIL, QUINN_EDUCATION, TOTAL_GROSS, INJURED.
+- **Objective**: To reduce overfitting and improve upon linear regression using L2 regularization.
+- **Features Used**: YEAR, TOTAL_GROSS, SAL_PLAN, ETHNIC_GRP, SEX.
 - **Results**:
-  - **MAE**: 13,658.96
-  - **RMSE**: 18,045.90
-  - **R²**: 0.4856
-- **Interpretation**: Ridge regression performed similarly to linear regression, with no significant improvement in predictive accuracy.
-
-### Lasso Regression
-
-- **Objective**: To prevent overfitting by penalizing large coefficients through L1 regularization.
-- **Features Used**: REGULAR, RETRO, DETAIL, QUINN_EDUCATION, TOTAL_GROSS, INJURED.
-- **Results**:
-  - **MAE**: 13,658.90
-  - **RMSE**: 18,045.85
-  - **R²**: 0.4856
-- **Interpretation**: Lasso regression performed identically to linear regression, suggesting minimal overfitting in the baseline model.
-
-### ElasticNet Regression
-
-- **Objective**: To combine the strengths of L1 (Lasso) and L2 (Ridge) regularization.
-- **Features Used**: REGULAR, RETRO, DETAIL, QUINN_EDUCATION, TOTAL_GROSS, INJURED.
-- **Results**:
-  - **MAE**: 13,662.99
-  - **RMSE**: 18,049.17
-  - **R²**: 0.4854
-- **Interpretation**: ElasticNet regression provided comparable performance to Lasso and Ridge, with no significant improvement in predictive power.
+  - **MAE**: 14,406.2427
+  - **RMSE**: 19,305.9194
+  - **R²**: 0.4637
+  - **Adjusted R²**: 0.4628
+- **Interpretation**: Ridge regression yielded nearly identical results to linear regression, indicating minimal benefit from regularization in this case.
 
 ### Random Forest
 
-- **Objective**: To capture nonlinear relationships between features and overtime pay.
-- **Features Used**: All selected numerical and categorical features.
+- **Objective**: To capture nonlinear relationships and interactions between features.
+- **Features Used**: YEAR, TOTAL_GROSS, SAL_PLAN, ETHNIC_GRP, SEX.
 - **Results**:
-  - **MAE**: 11,694.57
-  - **RMSE**: 15,919.11
-  - **R²**: 0.5997
-- **Interpretation**: Random Forest improved accuracy over linear models by capturing complex patterns in the data.
+  - **MAE**: 12,143.8824
+  - **RMSE**: 16,659.7777
+  - **R²**: 0.6006
+  - **Adjusted R²**: 0.6000
+- **Interpretation**: Random Forest significantly outperformed the linear models, explaining about 60.06% of the variance, suggesting that nonlinear patterns in the data are important for prediction.
 
 ### XGBoost
 
-- **Objective**: To enhance prediction accuracy using a boosted tree model.
-- **Features Used**: YEAR, REGULAR, SAL_PLAN, ETHNIC_GRP, SEX.
+- **Objective**: To improve predictive accuracy through gradient boosting.
+- **Features Used**: YEAR, TOTAL_GROSS, SAL_PLAN, ETHNIC_GRP, SEX.
 - **Results**:
-  - **MAE**: 11,211.49
-  - **RMSE**: 15,126.04
-  - **R²**: 0.6386
-- **Feature Importance**:
-  - **REGULAR**: 34.41%
-  - **SAL_PLAN**: 23.54%
-  - **SEX**: 18.88%
-  - **ETHNIC_GRP**: 13.07%
-  - **YEAR**: 10.10%
-- **Interpretation**: XGBoost outperformed other models, capturing nonlinear relationships and emphasizing the importance of regular pay.
-
-### LightGBM
-
-- **Objective**: To improve efficiency and accuracy with a lightweight boosting algorithm.
-- **Results**:
-  - **MAE**: 11,079.17
-  - **RMSE**: 14,728.43
-  - **R²**: 0.6573
-- **Interpretation**: LightGBM delivered high predictive accuracy with faster computation compared to XGBoost.
+  - **MAE**: 11,595.0642
+  - **RMSE**: 16,009.6721
+  - **R²**: 0.6312
+  - **Adjusted R²**: 0.6306
+- **Interpretation**: XGBoost delivered better performance than Random Forest and linear models, capturing more complex interactions and achieving a higher R².
 
 ### CatBoost
 
-- **Objective**: To handle categorical data and boost prediction performance.
+- **Objective**: To handle categorical data effectively and further improve prediction performance.
+- **Features Used**: YEAR, TOTAL_GROSS, SAL_PLAN, ETHNIC_GRP, SEX.
 - **Results**:
-  - **MAE**: 10,982.59
-  - **RMSE**: 14,655.08
-  - **R²**: 0.6607
-- **Interpretation**: CatBoost achieved the best overall performance, effectively handling categorical features without extensive preprocessing.
+  - **MAE**: 11,391.8519
+  - **RMSE**: 15,530.4487
+  - **R²**: 0.6529
+  - **Adjusted R²**: 0.6524
+- **Interpretation**: CatBoost achieved the best overall performance. Its ability to handle categorical variables without extensive preprocessing allowed for the most accurate predictions, explaining about 65.29% of the variance in overtime pay.
 
 ### Neural Network
 
