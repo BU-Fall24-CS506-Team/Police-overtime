@@ -1,14 +1,24 @@
-.PHONY: install run test lint
+.PHONY: install run clean venv
 
-install:
-	pip install --upgrade pip
-	pip install -r requirements.txt
+# Define variables
+VENV_DIR = .venv
+PYTHON = $(VENV_DIR)/bin/python
+PIP = $(VENV_DIR)/bin/pip
+JUPYTER = $(VENV_DIR)/bin/jupyter
 
-run:
-	python final_with_markdown.py
+# Create virtual environment
+venv:
+	python3 -m venv $(VENV_DIR)
 
-test:
-	pytest
+# Install dependencies inside the virtual environment
+install: venv
+	$(PIP) install --upgrade pip
+	$(PIP) install -r requirements.txt
 
-lint:
-	flake8 .
+# Run the Jupyter Notebook in the virtual environment
+run: install
+	$(JUPYTER) nbconvert --to notebook --execute final.ipynb --output final.ipynb
+
+# Clean up generated files (optional)
+clean:
+	rm -rf $(VENV_DIR)
