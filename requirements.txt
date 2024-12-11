@@ -1,5 +1,6 @@
 catboost
 flake8
+jupyter
 keras
 lightgbm
 matplotlib
