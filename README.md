@@ -101,7 +101,7 @@ This stacked bar chart visualizes the average expenditure for various salary com
 - **PSD:** Police Sergeant Detective (sergeants serving in investigative capacities)
 - **PSO:** Police Superior Officer (supervisory ranks such as sergeants and lieutenants)
 
-![total_spent_each](![image](https://github.com/user-attachments/assets/f2e98c60-0b39-46df-b4e9-bb1038ca1394)
+![total_spent_each](https://github.com/user-attachments/assets/f2e98c60-0b39-46df-b4e9-bb1038ca1394)
 
 **Insights:**
 - **Overtime and Injured Pay Significance:** Overtime and injured pay, though smaller than regular pay, still constitute substantial portions. This may indicate that staffing decisions, scheduling, or departmental policies influence these earnings.
