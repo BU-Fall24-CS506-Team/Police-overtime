@@ -24,7 +24,7 @@ The main objectives of this project are:
 - To analyze year-over-year changes in BPD overtime budgets and spending.
 - To analyze BPD overtime budgets and spending on different police saraly plan.
 - To identify the amount of injury pay and the percentage of officers taking them.
-- To identify outliers in the distribution of ratios of overtime worked vs. overtime paid.
+- To identify outliers in the distribution of overtime paid.
 - To explore demographic factors (e.g., officer rank, tenure, gender, and race) and their influence on overtime pay discrepancies.
 - To create visualizations that illustrate trends and anomalies in overtime payments.
 
