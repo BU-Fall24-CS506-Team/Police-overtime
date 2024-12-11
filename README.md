@@ -50,7 +50,8 @@ Black employees earn 38% more on overtime than Asian employees.
 2. **Average Overtime by Sex**
 
 This bar chart compares the average overtime pay between male and female employees. The height of each bar indicates the mean overtime pay for each gender.
-![average_overtime_sex](https://github.com/user-attachments/assets/5b89ecaa-aef8-461d-bf88-b763809e12bb)
+![download-1](https://github.com/user-attachments/assets/d35e8c9c-0e6a-46b1-b939-31a076919474)
+
 
 Insights:
 
@@ -61,7 +62,8 @@ This disparity raises questions about workload distribution, availability, or ac
 3. **Average Regular Pay by Sex**
 
 This bar chart compares the average regular pay between male and female employees. Similar to the overtime chart, the height of each bar indicates the mean regular pay.
-![average_regular_sex](https://github.com/user-attachments/assets/d992f6b2-7e30-4d74-ba1d-03e96dc0a1d4)
+![download](https://github.com/user-attachments/assets/a29efa83-1a8f-463d-ae20-35d9725563e6)
+
 
 Insights:
 
