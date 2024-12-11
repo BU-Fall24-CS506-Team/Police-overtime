@@ -1,13 +1,14 @@
 catboost
+flake8
 keras
 lightgbm
 matplotlib
 numpy
 pandas
+pytest
 requests
-seaborn
 scikit-learn
+scipy
+seaborn
 tensorflow
 xgboost
-flake8
-pytest
