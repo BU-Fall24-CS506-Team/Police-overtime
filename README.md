@@ -120,7 +120,7 @@ A dip around 2020 might be attributable to pandemic-related disruptions or other
 
 8. **Injury Pay Analysis**
 This analysis examines the proportion of officers receiving injury pay over the last decade and the average total amount paid per officer during that time frame, rather than per individual case. The pie chart below shows that approximately 41% of officers received injury pay from 2014 to 2023. Among those recipients, the average total injury pay over 10 years was about \$84,408.16 per person.
-![image](https://github.com/user-attachments/assets/e381c3da-057e-442f-b3ef-e1240a04dccf)
+![injury_pay_distribution (1)](https://github.com/user-attachments/assets/d7ad5605-7370-482f-ae43-994b06872407)
 Insights:
 - A significant portion (41%) of officers received injury pay.
 - Each recipient received an average of \$84,408.16 in total over 10 years.
