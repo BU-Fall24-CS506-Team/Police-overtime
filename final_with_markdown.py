@@ -273,6 +273,7 @@ plt.xticks(rotation=45)  # Rotate year labels if necessary
 plt.tight_layout()
 
 # Show the plot
+plt.savefig('yearamt.png', dpi=200, bbox_inches='tight')
 plt.show()
 
 # Group by 'year' and calculate the total amount spent on overtime
@@ -303,6 +304,7 @@ table.set_fontsize(12)
 plt.subplots_adjust(bottom=0.4)
 
 # Display the plot with the larger table
+plt.savefig('dt.png', dpi=200, bbox_inches='tight')
 plt.show()
 
 
@@ -388,6 +390,8 @@ plt.xticks(rotation=45, ha='right')
 
 # Show the plot
 plt.tight_layout()
+plt.savefig('ethnover.png', dpi=200, bbox_inches='tight')
+
 plt.show()
 print(merged_data.groupby('Ethnic Grp')['OVERTIME'].mean().BLACK/merged_data.groupby('Ethnic Grp')['OVERTIME'].mean().ASIAN)
 
@@ -409,6 +413,8 @@ plt.xticks(rotation=45, ha='right')
 
 # Show the plot
 plt.tight_layout()
+plt.savefig('ethnreg.png', dpi=200, bbox_inches='tight')
+
 plt.show()
 print(merged_data.groupby('Ethnic Grp')['REGULAR'].mean().BLACK/merged_data.groupby('Ethnic Grp')['REGULAR'].mean().ASIAN)
 
@@ -434,6 +440,7 @@ plt.xticks(rotation=45, ha='right')
 
 # Show the plot
 plt.tight_layout()
+plt.savefig('sexnreg.png', dpi=200, bbox_inches='tight')
 plt.show()
 print(merged_data.groupby('Sex')['REGULAR'].mean().M/merged_data.groupby('Sex')['REGULAR'].mean().F)
 
@@ -455,6 +462,8 @@ plt.xticks(rotation=45, ha='right')
 
 # Show the plot
 plt.tight_layout()
+plt.savefig('sexnover.png', dpi=200, bbox_inches='tight')
+
 plt.show()
 print(merged_data.groupby('Sex')['OVERTIME'].mean().M/merged_data.groupby('Sex')['OVERTIME'].mean().F)
 
@@ -553,6 +562,7 @@ corr_matrix = data.corr()
 plt.figure(figsize=(10, 8))
 sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
 plt.title('Correlation Matrix')
+plt.savefig('Correlation.png', dpi=200, bbox_inches='tight')
 plt.show()
 
 target = 'overtime'
